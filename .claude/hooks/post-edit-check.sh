@@ -7,6 +7,7 @@
 
 set -u
 
+HOOKS_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 cd "$ROOT" || exit 0
 
@@ -21,15 +22,9 @@ if ! command -v npm >/dev/null 2>&1; then
 fi
 
 # package.json の scripts に lint / build があるかを判定する。
+# Python が使えない場合は "no" 扱いになり、安全側（実行しない）に倒れる。
 has_script() {
-  python3 -c '
-import json, sys
-try:
-    scripts = json.load(open("package.json")).get("scripts", {}) or {}
-except Exception:
-    sys.exit(1)
-sys.exit(0 if sys.argv[1] in scripts else 1)
-' "$1"
+  [ "$(bash "$HOOKS_DIR/run-python.sh" "$HOOKS_DIR/has-script.py" "$1" 2>/dev/null)" = "yes" ]
 }
 
 run_script() {
