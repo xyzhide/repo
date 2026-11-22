@@ -11,8 +11,10 @@ claude-progress.txt — 作業ログ（新しい項目を上に追加する）
 - 項目4 フック: block-secrets.py（PreToolUse）、post-edit-check.sh（PostToolUse）、settings.json を作成。検査用の入力でテスト済み。
 - 項目5 引き継ぎ: feature_list.json、claude-progress.txt、INIT.md を作成。
 
+21st 登録: 完了（ユーザーが PC で登録。claude mcp list で「21st: npx -y @21st-dev/magic@latest - Connected」を確認）。キーは会話・リポジトリに含めていない。
+
 未了・次にやること:
-- 21st の登録（ユーザーが行う。APIキーは扱っていない）
 - 技術スタックと build / lint コマンドを決め、CLAUDE.md と feature_list.json に追記（SETUP-02）
 - 制作対象の定義（SETUP-03）
+- Windows 実機で、python / python3 / bash の有無を確認（フックは run-python.sh で探索する）
 - 実セッションでフックが発火することの確認（/hooks または実際の編集で確かめる）
