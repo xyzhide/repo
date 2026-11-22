@@ -1,0 +1,18 @@
+claude-progress.txt — 作業ログ（新しい項目を上に追加する）
+=========================================================
+
+2026-11-22  運用の型の導入（SETUP-01）
+
+作業内容:
+- 前提確認: 21st は claude mcp list に未登録（Connected ではない）。プロジェクトは空で、package.json・git・build/lint は無い。sitetech.jp 本体のリポジトリは環境内に見当たらなかった。
+- 項目1 CLAUDE.md: 作成。セクション5つを確認。
+- 項目2 スキル: site-build、pre-publish-check を作成。frontmatter を確認。
+- 項目3 サブエージェント: advisor（model: fable、読み取り専用）、scout（model: haiku、調査専用）を作成。frontmatter を確認。`claude agents` は実行中セッションしか返さないため、読み込みの実地確認は未了。
+- 項目4 フック: block-secrets.py（PreToolUse）、post-edit-check.sh（PostToolUse）、settings.json を作成。検査用の入力でテスト済み。
+- 項目5 引き継ぎ: feature_list.json、claude-progress.txt、INIT.md を作成。
+
+未了・次にやること:
+- 21st の登録（ユーザーが行う。APIキーは扱っていない）
+- 技術スタックと build / lint コマンドを決め、CLAUDE.md と feature_list.json に追記（SETUP-02）
+- 制作対象の定義（SETUP-03）
+- 実セッションでフックが発火することの確認（/hooks または実際の編集で確かめる）

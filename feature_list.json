@@ -1,0 +1,30 @@
+{
+  "project": "SITETECH 制作（sitetech.jp 本体には触れない）",
+  "updated": "2026-11-22",
+  "status_values": ["todo", "in_progress", "passing", "blocked"],
+  "rules": [
+    "1機能ずつ進める。完了にするのは、ユーザーの確認を得てから。",
+    "passing にする根拠（確認したこと）を evidence に書く。推測で passing にしない。",
+    "sitetech.jp 本体を対象とする項目は、着手前にユーザーの確認を取る。"
+  ],
+  "features": [
+    {
+      "id": "SETUP-01",
+      "title": "運用の型の導入（CLAUDE.md・スキル・サブエージェント・フック・引き継ぎ用ファイル）",
+      "status": "passing",
+      "evidence": "CLAUDE.md、.claude/skills 2本、.claude/agents 2体、.claude/settings.json とフック2本を作成。フックは検査用の入力でテスト済み（ブロック3種・通過・lint/build 分岐）。"
+    },
+    {
+      "id": "SETUP-02",
+      "title": "技術スタックと build / lint コマンドの確定",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "id": "SETUP-03",
+      "title": "プロジェクトの制作対象（ページ・機能）の定義",
+      "status": "todo",
+      "evidence": ""
+    }
+  ]
+}
